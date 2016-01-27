@@ -52,7 +52,6 @@ namespace Nop.Plugin.Payments.YandexKassa.Controllers
         [ChildActionOnly]
         public ActionResult Configure()
         {
-            // load settings for a chosen store scope
             var storeScope = this.GetActiveStoreScopeConfiguration(_storeService, _workContext);
             var yandexKassaPaymentSettings = _settingService.LoadSetting<YandexKassaPaymentSettings>(storeScope);
 
@@ -82,11 +81,9 @@ namespace Nop.Plugin.Payments.YandexKassa.Controllers
             if (!ModelState.IsValid)
                 return Configure();
 
-            //load settings for a chosen store scope
             var storeScope = this.GetActiveStoreScopeConfiguration(_storeService, _workContext);
             var yandexKassaPaymentSettings = _settingService.LoadSetting<YandexKassaPaymentSettings>(storeScope);
 
-            //save settings
             yandexKassaPaymentSettings.UseSandbox = model.UseSandbox;
             yandexKassaPaymentSettings.BusinessEmail = model.BusinessEmail;
             yandexKassaPaymentSettings.ShopId = Convert.ToInt32(model.ShopId);
@@ -153,8 +150,6 @@ namespace Nop.Plugin.Payments.YandexKassa.Controllers
                 !processor.IsPaymentMethodActive(_paymentSettings) || !processor.PluginDescriptor.Installed)
                 throw new NopException("Модуль Яндекс.Кассы не может быть загружен");
 
-            //UNDONE: we should ensure this page is submitted by Assist; otherwise, everybody can mark his own order as paid
-            //uncomment the libe below when it's ready
             return RedirectToAction("Index", "Home", new { area = "" });
 
 

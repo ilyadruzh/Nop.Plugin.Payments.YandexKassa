@@ -4,7 +4,10 @@ namespace Nop.Plugin.Payments.YandexKassa
 {
     public class YandexKassaPaymentSettings : ISettings
     {
+        // Использовать плагин в тестовом режиме
         public bool UseSandbox { get; set; }
+
+        // Email
         public string BusinessEmail { get; set; }
         public int ShopId { get; set; }
         public int Scid { get; set; }
