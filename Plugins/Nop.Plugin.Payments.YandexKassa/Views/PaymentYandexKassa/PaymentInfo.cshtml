@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "";
+}
+
+@model Nop.Plugin.Payments.YandexKassa.Models.PaymentInfoModel
+@using Nop.Web.Framework;
+
+
+<table width="100%" cellspacing="2" cellpadding="1" border="0">
+
+    <tr>
+        <td>
+            <b>@T("Plugins.Payments.YandexKassa.Fields.AboutYandexKassa"): </b>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.PC"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "PC")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.AC"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "AC")
+        </td>
+    </tr>
+    @*<tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.MC"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "MC"): MC</label>
+        </td>
+    </tr>*@
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.GP"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "GP")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.WM"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "WM")
+        </td>
+    </tr>
+    @*<tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.SB"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "SB")</label>
+        </td>
+    </tr>*@
+    @*<tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.MP"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "MP")</label>
+        </td>
+    </tr>*@
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.AB"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "AB")
+        </td>
+    </tr>
+    @*<tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.MA"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "МА"): MA</label>
+        </td>
+    </tr>*@
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.PB"): 
+        </td>
+        <td>
+            @Html.RadioButtonFor(model => model.yandexKassaMode, "PB")
+        </td>
+    </tr>
+    @*<tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.QW"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "QW"): QW</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @T("Plugins.Payments.YandexKassa.Fields.KV"):
+        </td>
+        <td>
+            <label>@Html.RadioButtonFor(model => model.yandexKassaMode, "KV"): KV</label>
+        </td>
+    </tr>*@
+</table>
+
+    

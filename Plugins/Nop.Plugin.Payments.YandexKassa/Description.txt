@@ -1,0 +1,8 @@
+﻿Group: Payment methods
+FriendlyName: YandexKassa
+SystemName: Payments.YandexKassa
+Version: 0.62
+SupportedVersions: 3.70
+Author: Ilya Druzhinin for nopCommerce.ru
+DisplayOrder: 1
+FileName: Nop.Plugin.Payments.YandexKassa.dll

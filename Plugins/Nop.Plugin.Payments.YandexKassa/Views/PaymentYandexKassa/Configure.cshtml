@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Payments.YandexKassa.Models.ConfigurationModel
+@using Nop.Web.Framework;
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="adminContent">
+        <tr>
+            <td colspan="2">
+               Яндекс.Касса - система для приема платежей для интернет-магазинов. Чтобы воспользоваться этим плагином, Вам нужно зарегистрироваться на сайте https://kassa.yandex.ru/
+               После регистрации вы получите идентификаторы: ShopId и Scid.
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.UseSandbox_OverrideForStore, model => model.UseSandbox, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.UseSandbox):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.UseSandbox)
+                @Html.ValidationMessageFor(model => model.UseSandbox)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.BusinessEmail_OverrideForStore, model => model.BusinessEmail, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.BusinessEmail):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.BusinessEmail)
+                @Html.ValidationMessageFor(model => model.BusinessEmail)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.ShopId_OverrideForStore, model => model.ShopId, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.ShopId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.ShopId)
+                @Html.ValidationMessageFor(model => model.ShopId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.Scid_OverrideForStore, model => model.Scid, Model.ActiveStoreScopeConfiguration)
+                @Html.NopLabelFor(model => model.Scid):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Scid)
+                @Html.ValidationMessageFor(model => model.Scid)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
+            </td>
+        </tr>
+    </table>
+
+}
